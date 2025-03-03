@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: docmost
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: starter
+    healthCheckPath: /api/health
+    envVars:
+      - key: APP_URL
+        value: https://your-app-name.onrender.com
+      - key: APP_SECRET
+        value: a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0u1v2w3x4y5z6
+      - key: DATABASE_URL
+        value: postgresql://docmost:bDsZ6TtSbhAqJW7uAIb3SmilynaaM5vW@dpg-cv304llumphs73a02vdg-a/docmost_vx4c
+      - key: REDIS_URL
+        value: redis://default:AbaeAAIjcDE3Njk4ZDkyODE0YTQ0YWYyOWFjNGY3ODZmZTdlNmU4N3AxMA@keen-amoeba-46750.upstash.io:6379
+      - key: NODE_ENV
+        value: production
+    disk:
+      name: docmost-data
+      mountPath: /app/data/storage
+      sizeGB: 1 
