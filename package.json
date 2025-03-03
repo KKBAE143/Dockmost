@@ -1,0 +1,14 @@
+{
+  "name": "docmost-docker-deployment",
+  "version": "1.0.0",
+  "description": "Docmost deployment using Docker",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo 'This is a Docker deployment, no build needed'",
+    "start": "echo 'This is a Docker deployment, use the Dockerfile'"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "private": true
+} 

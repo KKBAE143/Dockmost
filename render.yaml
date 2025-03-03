@@ -4,6 +4,8 @@ services:
     runtime: docker
     dockerfilePath: ./Dockerfile
     plan: starter
+    buildCommand: ""
+    startCommand: ""
     healthCheckPath: /api/health
     envVars:
       - key: APP_URL

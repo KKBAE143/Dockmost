@@ -1,0 +1,8 @@
+{
+  "skipDetection": true,
+  "buildpacks": [
+    {
+      "id": "heroku/docker"
+    }
+  ]
+} 

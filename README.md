@@ -4,37 +4,43 @@ This repository contains configuration files for deploying Docmost to Render.
 
 ## Deployment Instructions
 
-### Option 1: Deploy to Render using the Blueprint
+### Manual Deployment on Render
 
-1. Click the "Deploy to Render" button below:
+1. In your Render dashboard, create a new Web Service
+2. Connect to this GitHub repository
+3. Configure the service:
+   - **Name**: docmost (or your preferred name)
+   - **Environment**: Docker
+   - **Region**: Choose your preferred region
+   - **Branch**: main
+   - **Build Command**: Leave empty
+   - **Start Command**: Leave empty
+   - **Plan**: Choose your preferred plan
 
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy)
-
-2. This will use the `render.yaml` file to set up your Docmost instance.
-
-### Option 2: Manual Deployment
-
-1. Fork this repository
-2. In your Render dashboard, create a new Web Service
-3. Connect to your GitHub repository
-4. Select "Docker" as the environment
-5. Set the following environment variables:
+4. Add the following environment variables:
    - `APP_URL`: Your Render app URL (e.g., https://docmost.onrender.com)
-   - `APP_SECRET`: A secure random string
-   - `DATABASE_URL`: Your PostgreSQL connection string
-   - `REDIS_URL`: Your Redis connection string
+   - `APP_SECRET`: a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0u1v2w3x4y5z6 (or your own secure string)
+   - `DATABASE_URL`: postgresql://docmost:bDsZ6TtSbhAqJW7uAIb3SmilynaaM5vW@dpg-cv304llumphs73a02vdg-a/docmost_vx4c
+   - `REDIS_URL`: redis://default:AbaeAAIjcDE3Njk4ZDkyODE0YTQ0YWYyOWFjNGY3ODZmZTdlNmU4N3AxMA@keen-amoeba-46750.upstash.io:6379
    - `NODE_ENV`: production
-6. Add a disk with mount path: `/app/data/storage`
-7. Deploy the service
 
-## Configuration
+5. Add a disk:
+   - **Name**: docmost-data
+   - **Mount Path**: /app/data/storage
+   - **Size**: 1 GB (or your preferred size)
 
-Update the `render.yaml` file to customize your deployment:
+6. Set the health check path to: `/api/health`
 
-- Update the `APP_URL` to match your Render URL
-- Set a strong `APP_SECRET`
-- Update the `REDIS_URL` with your Upstash Redis password
-- Adjust the disk size as needed
+7. Click "Create Web Service"
+
+## Troubleshooting
+
+If you encounter build issues:
+
+1. Make sure you've selected "Docker" as the environment
+2. Verify that the Dockerfile is being used
+3. Check that the environment variables are set correctly
+4. Ensure the disk is mounted at the correct path
 
 ## First-time Setup
 
