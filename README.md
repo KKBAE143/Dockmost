@@ -40,7 +40,7 @@ If you encounter build issues:
 1. Make sure you've selected "Docker" as the environment
 2. Verify that the Dockerfile is being used
 3. Check that the environment variables are set correctly
-4. Ensure the disk is mounted at the correct path
+4. Ensure the disk is mounted at the correct path.
 
 ## First-time Setup
 
