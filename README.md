@@ -44,4 +44,4 @@ If you encounter build issues:
 
 ## First-time Setup
 
-After deployment, visit your Docmost URL to set up your workspace and create an admin account. 
+After deployment, please visit your Docmost URL to set up your workspace and create an admin account. 
