@@ -4,7 +4,7 @@ This repository contains configuration files for deploying Docmost to Render.
 
 ## Deployment Instructions
 
-### Manual Deployment on Render
+### Manual Deployment on Renders
 
 1. In your Render dashboard, create a new Web Service
 2. Connect to this GitHub repository
